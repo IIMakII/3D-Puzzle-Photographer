@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public int InteractRange = 3;
+    public int InteractRange = 4;
     private Camera cam;
     public bool InteractInRange = false, InPuzzleRange = false, PuzzleMode = false;
     SphereCollider coll;
     public List<GameObject> Inventory;
-    public GameObject pickableObject;
+    public GameObject pickableObject, puzzleObject;
 
     void Start()
     {
@@ -29,6 +29,8 @@ public class PlayerScript : MonoBehaviour
                 {
                     Inventory.Add(pickableObject);
                     pickableObject.SetActive(false);
+                    pickableObject = null;
+                    InteractInRange = false;
                 }
                 
                 if(InPuzzleRange == true)
@@ -40,13 +42,19 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    void PuzzleModeAction()
+    public void PuzzleModeAction()
     {
         PuzzleMode = !PuzzleMode;  
         if (PuzzleMode == true)
         {
             GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
             Debug.Log("cant move");
+            
+            if(puzzleObject.GetComponent<PuzzleDoor>().PuzzlePieces.Count == Inventory.Count)
+            {
+                Debug.Log("same capacity");
+                puzzleObject.GetComponent<PuzzleDoor>().Passed = true;
+            }
         }
 
         if(PuzzleMode == false)
@@ -68,6 +76,7 @@ public class PlayerScript : MonoBehaviour
 
         if(other.tag == "Puzzle")
         {
+            puzzleObject = other.gameObject;
             InPuzzleRange = true;
             InteractInRange = true;
         }
@@ -75,16 +84,18 @@ public class PlayerScript : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        InteractInRange = false;
 
         if (other.tag == "Pickup")
         {
             pickableObject = null;
+            InteractInRange = false;
         }
 
         if (other.tag == "Puzzle")
         {
             InPuzzleRange = false;
+            puzzleObject = null;
+            InteractInRange = false;
         }
     }
 
@@ -92,5 +103,6 @@ public class PlayerScript : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, InteractRange);
+        Debug.Log("interact range " + InteractRange);
     }
 }
