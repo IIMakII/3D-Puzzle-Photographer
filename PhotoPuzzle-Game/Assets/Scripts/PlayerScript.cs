@@ -10,34 +10,47 @@ public class PlayerScript : MonoBehaviour
     SphereCollider coll;
     public List<GameObject> Inventory;
     public GameObject pickableObject, puzzleObject;
+    private GameObject IFCam;
 
     void Start()
     {
         coll = GetComponent<SphereCollider>();
         cam = GetComponentInChildren<Camera>();
         coll.radius = InteractRange;
+        IFCam = GetComponent<UserInput>().VideoCamera;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(InteractInRange == true)
-        {
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                if(pickableObject != null)
-                {
-                    Inventory.Add(pickableObject);
-                    pickableObject.SetActive(false);
-                    pickableObject = null;
-                    InteractInRange = false;
-                }
-                
-                if(InPuzzleRange == true)
-                {
-                    PuzzleModeAction();
-                }
 
+        Vector3 direction = (pickableObject.transform.position - this.transform.position).normalized;
+        direction.y = 0;
+
+        Quaternion rotate = Quaternion.LookRotation(direction);
+
+        Debug.Log("rotate is " + rotate);
+
+      if ( IFCam.activeInHierarchy == false)
+        {
+            if (InteractInRange == true)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (pickableObject != null)
+                    {
+                        Inventory.Add(pickableObject);
+                        pickableObject.SetActive(false);
+                        pickableObject = null;
+                        InteractInRange = false;
+                    }
+
+                    if (InPuzzleRange == true)
+                    {
+                        PuzzleModeAction();
+                    }
+
+                }
             }
         }
     }
