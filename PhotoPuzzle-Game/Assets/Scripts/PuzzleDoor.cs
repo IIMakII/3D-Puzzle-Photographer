@@ -25,7 +25,7 @@ public class PuzzleDoor : MonoBehaviour
     IEnumerator Opening()
     {
         yield return new WaitForSeconds (1.5f);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>().PuzzleModeAction();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>().PuzzleMode = false;
         Debug.Log("Passed");
 
         this.gameObject.SetActive(false);
