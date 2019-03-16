@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 8552268771752775737}
   m_Layer: 9
   m_Name: Thermal
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

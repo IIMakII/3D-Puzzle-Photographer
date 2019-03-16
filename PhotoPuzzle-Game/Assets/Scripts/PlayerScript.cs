@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public int InteractRange = 4;
+    [SerializeField] float SphereCastRadius = 0.5f;
     private Camera cam;
     public bool InteractInRange = false, InPuzzleRange = false, PuzzleMode = false;
     SphereCollider coll;
     public List<GameObject> Inventory;
     public GameObject pickableObject, puzzleObject;
     private GameObject IFCam;
+    RaycastHit hit;
 
     void Start()
     {
@@ -23,35 +25,27 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Vector3 direction = (pickableObject.transform.position - this.transform.position).normalized;
-        direction.y = 0;
-
-        Quaternion rotate = Quaternion.LookRotation(direction);
-
-        Debug.Log("rotate is " + rotate);
-
       if ( IFCam.activeInHierarchy == false)
         {
-            if (InteractInRange == true)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Physics.SphereCast(cam.transform.position, SphereCastRadius, cam.transform.forward, out hit, InteractRange, 9))
                 {
-                    if (pickableObject != null)
+                    if(hit.transform.tag == "Pickup")
                     {
-                        Inventory.Add(pickableObject);
-                        pickableObject.SetActive(false);
-                        pickableObject = null;
-                        InteractInRange = false;
+                        Inventory.Add(hit.transform.gameObject);
+                        hit.transform.gameObject.SetActive(false);
                     }
 
-                    if (InPuzzleRange == true)
+                
+                    if (hit.transform.tag == "Puzzle")
                     {
                         PuzzleModeAction();
                     }
-
                 }
+                Debug.Log("object is " + hit.transform.gameObject.name);
             }
+          
         }
     }
 
@@ -63,10 +57,10 @@ public class PlayerScript : MonoBehaviour
             GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
             Debug.Log("cant move");
             
-            if(puzzleObject.GetComponent<PuzzleDoor>().PuzzlePieces.Count == Inventory.Count)
+            if(hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces.Count == Inventory.Count)
             {
                 Debug.Log("same capacity");
-                puzzleObject.GetComponent<PuzzleDoor>().Passed = true;
+                hit.transform.GetComponent<PuzzleDoor>().Passed = true;
             }
         }
 
@@ -76,40 +70,6 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("can move");
         }
         
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Pickup")
-        {
-            pickableObject = other.gameObject;
-            InteractInRange = true;
-        }
-
-        if(other.tag == "Puzzle")
-        {
-            puzzleObject = other.gameObject;
-            InPuzzleRange = true;
-            InteractInRange = true;
-        }
-
-    }
-    private void OnTriggerExit(Collider other)
-    {
-
-        if (other.tag == "Pickup")
-        {
-            pickableObject = null;
-            InteractInRange = false;
-        }
-
-        if (other.tag == "Puzzle")
-        {
-            InPuzzleRange = false;
-            puzzleObject = null;
-            InteractInRange = false;
-        }
     }
 
     private void OnDrawGizmos()
