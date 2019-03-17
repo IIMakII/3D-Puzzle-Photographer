@@ -16,6 +16,7 @@ public class PlayerScript : MonoBehaviour
     private GameObject IFCam;
     RaycastHit hit;
     Vector3 ViewPieceScale = new Vector3(0.1f, 0.1f, 0.1f);
+    Quaternion lockRot = new Quaternion(0, 0, 0,0);
 
     void Start()
     {
@@ -40,6 +41,8 @@ public class PlayerScript : MonoBehaviour
                         {
                             Inventory.Add(hit.transform.gameObject);
                             hit.transform.GetComponent<Rigidbody>().useGravity = false;
+                            hit.transform.GetComponent<Rigidbody>().freezeRotation = true;
+                            hit.transform.rotation = lockRot;
                             hit.transform.localScale = ViewPieceScale;
                             hit.transform.gameObject.SetActive(false);
                         }
@@ -47,6 +50,7 @@ public class PlayerScript : MonoBehaviour
                         if (hit.transform.tag == "Puzzle")
                         {
                             PuzzleMode = true;
+                            wait = false;
                         }
                         Debug.Log("object is " + hit.transform.gameObject.name);
                     }
@@ -59,19 +63,34 @@ public class PlayerScript : MonoBehaviour
             {
                 if(rounds == hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces.Count)
                 {
+                    rounds = 0;
                     HaveItems = false;
                     PuzzleMode = false;
-                    if(answer == hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces)
+                    wait = false;
+                    GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+                    hit.transform.GetComponent<PuzzleDoor>().Passed = true;
+
+                    for (int x = 0; x< hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces.Count; x++)
                     {
-                        hit.transform.GetComponent<PuzzleDoor>().Passed = true;
-                        Debug.Log("correct answer");
+                       if(answer[x].gameObject.name != hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces[x].gameObject.name)
+                       {
+                            hit.transform.GetComponent<PuzzleDoor>().Passed = false;
+                            Debug.Log("failed");
+                       }
                     }
-                    else
+
+                    if (hit.transform.GetComponent<PuzzleDoor>().Passed == false)
                     {
-                        Debug.Log("incorrect answer");
+                       foreach (GameObject obj in answer)
+                        {
+                            Inventory.Add(obj);
+                        }
+                        answer.Clear();
                     }
+
+                    
                 }
-                if (Inventory.Count >= hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces.Count)
+                else if (Inventory.Count >= hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces.Count)
                 {
                     HaveItems = true;
                 }
@@ -103,6 +122,36 @@ public class PlayerScript : MonoBehaviour
                         Debug.Log("current view number is " + currentViewPiece);
                         Debug.Log("Invent capp is " + Inventory.Count);
                     }
+                    if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftArrow))
+                    {
+                        Inventory[currentViewPiece].SetActive(false);
+                        currentViewPiece--;
+                        Debug.Log("current view number is " + currentViewPiece);
+                        Debug.Log("Invent capp is " + Inventory.Count);
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.Q))
+                    {
+                        if(answer.Count == 0 )
+                        {
+                            rounds = 0;
+                            wait = false;
+                            HaveItems = false;
+                            PuzzleMode = false;
+                            GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+                            Inventory[currentViewPiece].SetActive(false);
+                        }
+                        else
+                        {
+                            rounds--;
+                            int x = (answer.Count - 1);
+                            Inventory.Add(answer[x]);
+                            answer.RemoveAt(x);
+                            Inventory[currentViewPiece].SetActive(false);
+                            currentViewPiece = 0;
+                        }
+                    }
+
                    if(wait == true)
                     {
                         if (Input.GetKeyDown(KeyCode.E))
@@ -110,6 +159,7 @@ public class PlayerScript : MonoBehaviour
                             answer.Add(Inventory[currentViewPiece]);
                             Inventory[currentViewPiece].SetActive(false);
                             Inventory.RemoveAt(currentViewPiece);
+                            currentViewPiece = 0;
                             Debug.Log("piece added");
                             rounds++;
                         }
@@ -122,10 +172,7 @@ public class PlayerScript : MonoBehaviour
 
     public void PuzzleModeAction()
     {
-
-       
-            
-            
+        
            /* if(hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces.Count == Inventory.Count)
             {
                 Debug.Log("same capacity");
