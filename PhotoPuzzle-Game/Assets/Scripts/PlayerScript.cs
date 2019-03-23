@@ -1,27 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
     public int InteractRange = 4;
-    bool HaveItems = false,wait = false;
+    float UITime = 0;
+    bool HaveItems = false, wait = false, UIMenuActive = false,MoveCam = false;
     private int currentViewPiece = 0, rounds = 0;
-    [SerializeField] float SphereCastRadius = 0.5f;
+    [SerializeField] float SphereCastRadius = 0.5f,UITransitionTime = 1.5f;
     [SerializeField] GameObject showPieces;
-    private Camera cam;
+    [SerializeField] Camera cam;
     public bool InteractInRange = false, InPuzzleRange = false, PuzzleMode = false;
     SphereCollider coll;
+    [SerializeField] List<GameObject> UIMainMenu;
     public List<GameObject> Inventory, answer;
     private GameObject IFCam;
     RaycastHit hit;
     Vector3 ViewPieceScale = new Vector3(0.1f, 0.1f, 0.1f);
-    Quaternion lockRot = new Quaternion(0, 0, 0,0);
+    Quaternion NeutralRot = new Quaternion(0, 0, 0,0);
 
     void Start()
     {
         coll = GetComponent<SphereCollider>();
-        cam = GetComponentInChildren<Camera>();
         coll.radius = InteractRange;
         IFCam = GetComponent<UserInput>().VideoCamera;
     }
@@ -29,10 +31,42 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
       if ( IFCam.activeInHierarchy == false)
         {
+            if (MoveCam == true)
+            {
+                UITime += (1 * Time.deltaTime) / UITransitionTime;
+
+                if (UIMenuActive == true)
+                {
+                     Debug.Log("ui time is " + UITime);
+                     float x = Mathf.Lerp(cam.transform.rotation.x, 27, UITime);
+                     cam.transform.localEulerAngles = new Vector3 (x, 0, 0);
+                }
+
+                else
+                {
+                    float x = Mathf.Lerp(27, 0, UITime);
+                    cam.transform.localEulerAngles = new Vector3(x, 0, 0);
+                }
+            }
+
             if (PuzzleMode == false)
             {
+
+                if(Input.GetKeyDown(KeyCode.Tab))
+                {
+                    if (MoveCam == false)
+                    {
+                        UITime = 0;
+                        UIMenuActive = !UIMenuActive;
+                        MoveCam = true;
+                        StartCoroutine(SwitchingUIToggle());
+                    }
+                  
+                }
+
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     if(Physics.SphereCast(cam.transform.position, SphereCastRadius, cam.transform.forward, out hit, InteractRange, 9))
@@ -42,7 +76,7 @@ public class PlayerScript : MonoBehaviour
                             Inventory.Add(hit.transform.gameObject);
                             hit.transform.GetComponent<Rigidbody>().useGravity = false;
                             hit.transform.GetComponent<Rigidbody>().freezeRotation = true;
-                            hit.transform.rotation = lockRot;
+                            hit.transform.rotation = NeutralRot;
                             hit.transform.localScale = ViewPieceScale;
                             hit.transform.gameObject.SetActive(false);
                         }
@@ -59,6 +93,14 @@ public class PlayerScript : MonoBehaviour
                 }
             }
           
+            if (UIMenuActive == true)
+            {
+                if(MoveCam == false)
+                {
+
+                }
+            }
+
             if(PuzzleMode == true)
             {
                 if(rounds == hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces.Count)
@@ -170,17 +212,27 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    IEnumerator SwitchingUIToggle()
+    {
+        if (UIMenuActive == true)
+        {
+            GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+
+            yield return new WaitForSeconds(UITransitionTime);
+            MoveCam = false;
+        }
+
+        else
+        {
+            yield return new WaitForSeconds(UITransitionTime);
+
+            GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+            MoveCam = false;
+        }
+    }
+
     public void PuzzleModeAction()
     {
-        
-           /* if(hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces.Count == Inventory.Count)
-            {
-                Debug.Log("same capacity");
-                hit.transform.GetComponent<PuzzleDoor>().Passed = true;
-            }
-            */
-        
-
         if(PuzzleMode == false)
         { 
             GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
