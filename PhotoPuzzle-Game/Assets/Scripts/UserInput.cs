@@ -14,7 +14,7 @@ public class UserInput : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.N))
+        if(Input.GetKeyDown(KeyCode.F))
         {
             if(VideoCamera.active == false)
             {

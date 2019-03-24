@@ -8,30 +8,33 @@ public class PlayerScript : MonoBehaviour
     public int InteractRange = 4;
     float UITime = 0;
     bool HaveItems = false, wait = false, UIMenuActive = false,MoveCam = false;
-    private int currentViewPiece = 0, rounds = 0;
+    private int currentViewPiece = 0, rounds = 0, CurrentUIMenu = 0;
     [SerializeField] float SphereCastRadius = 0.5f,UITransitionTime = 1.5f;
     [SerializeField] GameObject showPieces;
-    [SerializeField] Camera cam;
     public bool InteractInRange = false, InPuzzleRange = false, PuzzleMode = false;
     SphereCollider coll;
-    [SerializeField] List<GameObject> UIMainMenu;
+    public List<Text> UISelections, TempUISelections, UIMainMenu;
+    //public List<GameObject> UIMainMenu;
     public List<GameObject> Inventory, answer;
-    private GameObject IFCam;
+    private GameObject IFCam, MainCam, UICanvas;
     RaycastHit hit;
     Vector3 ViewPieceScale = new Vector3(0.1f, 0.1f, 0.1f);
     Quaternion NeutralRot = new Quaternion(0, 0, 0,0);
+    
 
     void Start()
     {
         coll = GetComponent<SphereCollider>();
         coll.radius = InteractRange;
         IFCam = GetComponent<UserInput>().VideoCamera;
+        MainCam = transform.Find("FirstPersonCharacter").gameObject;
+        UICanvas = transform.Find("DigeticUICanvas").gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
       if ( IFCam.activeInHierarchy == false)
         {
             if (MoveCam == true)
@@ -40,15 +43,15 @@ public class PlayerScript : MonoBehaviour
 
                 if (UIMenuActive == true)
                 {
-                     Debug.Log("ui time is " + UITime);
-                     float x = Mathf.Lerp(cam.transform.rotation.x, 27, UITime);
-                     cam.transform.localEulerAngles = new Vector3 (x, 0, 0);
+                     CurrentUIMenu = 0;
+                     float x = Mathf.Lerp(MainCam.transform.rotation.x, 27, UITime);
+                     MainCam.transform.localEulerAngles = new Vector3 (x, 0, 0);
                 }
 
                 else
                 {
                     float x = Mathf.Lerp(27, 0, UITime);
-                    cam.transform.localEulerAngles = new Vector3(x, 0, 0);
+                    MainCam.transform.localEulerAngles = new Vector3(x, 0, 0);
                 }
             }
 
@@ -64,12 +67,12 @@ public class PlayerScript : MonoBehaviour
                         MoveCam = true;
                         StartCoroutine(SwitchingUIToggle());
                     }
-                  
+
                 }
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if(Physics.SphereCast(cam.transform.position, SphereCastRadius, cam.transform.forward, out hit, InteractRange, 9))
+                    if(Physics.SphereCast(MainCam.transform.position, SphereCastRadius, MainCam.transform.forward, out hit, InteractRange, 9))
                     {
                         if (hit.transform.tag == "Pickup")
                         {
@@ -95,8 +98,56 @@ public class PlayerScript : MonoBehaviour
           
             if (UIMenuActive == true)
             {
-                if(MoveCam == false)
+                if (MoveCam == false)
                 {
+                    if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+                    {
+                        UISelections[CurrentUIMenu].fontSize = 14;
+                        CurrentUIMenu = (CurrentUIMenu + 1) % UISelections.Count;
+                        UISelections[CurrentUIMenu].fontSize = 16;
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftArrow))
+                    {
+                        if (CurrentUIMenu > 0)
+                        {
+                            UISelections[CurrentUIMenu].fontSize = 14;
+                            CurrentUIMenu--;
+                            UISelections[CurrentUIMenu].fontSize = 16;
+                        }
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.Q))
+                    {
+                        foreach (Text obj in UISelections)
+                        {
+                            obj.gameObject.SetActive(false);
+                        }
+                        UISelections.Clear();
+                        UISelections.AddRange(UIMainMenu);
+                        foreach (Text obj in UISelections)
+                        {
+                            obj.gameObject.SetActive(true);
+                        }
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Debug.Log("current ui is " + CurrentUIMenu);
+                        foreach (Text obj in UISelections)
+                        {
+                            obj.gameObject.SetActive(false);
+                        }
+                        Debug.Log("yayadayd");
+                        TempUISelections.AddRange(UISelections[CurrentUIMenu].transform.GetComponent<UIObjectScript>().ListOfTransitions);
+                        UISelections.Clear();
+                        UISelections.AddRange(TempUISelections);
+                        TempUISelections.Clear();
+                        foreach (Text obj in UISelections)
+                        {
+                            obj.gameObject.SetActive(true);
+                        }
+                    }
 
                 }
             }
@@ -219,11 +270,21 @@ public class PlayerScript : MonoBehaviour
             GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
 
             yield return new WaitForSeconds(UITransitionTime);
+            UICanvas.SetActive(true);
             MoveCam = false;
+            UISelections.AddRange(UIMainMenu);
+            foreach (Text obj  in UISelections)
+            {
+                obj.gameObject.SetActive(true);
+            }
+            UISelections[CurrentUIMenu].fontSize = 16;
         }
 
         else
         {
+            UISelections[CurrentUIMenu].fontSize = 14;
+            UISelections.Clear();
+            UICanvas.SetActive(false);
             yield return new WaitForSeconds(UITransitionTime);
 
             GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;

@@ -1,16 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIObjectScript : MonoBehaviour
 {
-    public List<GameObject> ListOfTransitions;
-    public GameObject cam;
-
-    private void Start()
-    {
-        Vector3 direction = (cam.transform.position - this.transform.position).normalized;
-        Quaternion rotate = Quaternion.LookRotation(direction);
-        this.transform.rotation = rotate;
-    }
+    public List<Text> ListOfTransitions;
+  
 }
