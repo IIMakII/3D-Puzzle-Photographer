@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Pickup
   - Puzzle
+  - Pickup_Cube
+  - Pickup_Sphere
+  - Pickup_Cyclinder
   layers:
   - Default
   - TransparentFX

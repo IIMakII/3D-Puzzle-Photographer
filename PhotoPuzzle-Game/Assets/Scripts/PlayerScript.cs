@@ -74,7 +74,7 @@ public class PlayerScript : MonoBehaviour
                 {
                     if(Physics.SphereCast(MainCam.transform.position, SphereCastRadius, MainCam.transform.forward, out hit, InteractRange, 9))
                     {
-                        if (hit.transform.tag == "Pickup")
+                        if (hit.transform.tag == "Pickup_Cube" || hit.transform.tag == "Pickup_Cyclinder" || hit.transform.tag == "Pickup_Sphere")
                         {
                             Inventory.Add(hit.transform.gameObject);
                             hit.transform.GetComponent<Rigidbody>().useGravity = false;
@@ -102,18 +102,25 @@ public class PlayerScript : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                     {
-                        UISelections[CurrentUIMenu].fontSize = 14;
-                        CurrentUIMenu = (CurrentUIMenu + 1) % UISelections.Count;
-                        UISelections[CurrentUIMenu].fontSize = 16;
+                        if(UISelections.Count > 1)
+                        {
+
+                            UISelections[CurrentUIMenu].fontSize = 14;
+                            CurrentUIMenu = (CurrentUIMenu + 1) % UISelections.Count;
+                            UISelections[CurrentUIMenu].fontSize = 16;
+                        }
                     }
 
                     if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftArrow))
                     {
                         if (CurrentUIMenu > 0)
                         {
-                            UISelections[CurrentUIMenu].fontSize = 14;
-                            CurrentUIMenu--;
-                            UISelections[CurrentUIMenu].fontSize = 16;
+                            if(UISelections.Count > 1)
+                            {
+                                UISelections[CurrentUIMenu].fontSize = 14;
+                                CurrentUIMenu--;
+                                UISelections[CurrentUIMenu].fontSize = 16;
+                            }
                         }
                     }
 
@@ -138,7 +145,6 @@ public class PlayerScript : MonoBehaviour
                         {
                             obj.gameObject.SetActive(false);
                         }
-                        Debug.Log("yayadayd");
                         TempUISelections.AddRange(UISelections[CurrentUIMenu].transform.GetComponent<UIObjectScript>().ListOfTransitions);
                         UISelections.Clear();
                         UISelections.AddRange(TempUISelections);
@@ -165,7 +171,7 @@ public class PlayerScript : MonoBehaviour
 
                     for (int x = 0; x< hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces.Count; x++)
                     {
-                       if(answer[x].gameObject.name != hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces[x].gameObject.name)
+                       if(answer[x].gameObject.tag != hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces[x].gameObject.tag)
                        {
                             hit.transform.GetComponent<PuzzleDoor>().Passed = false;
                             Debug.Log("failed");
