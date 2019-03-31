@@ -184,10 +184,10 @@ public class PlayerScript : MonoBehaviour
                         {
                             Inventory.Add(obj);
                         }
-                        answer.Clear();
+                       
                     }
+                    answer.Clear();
 
-                    
                 }
                 else if (Inventory.Count >= hit.transform.GetComponent<PuzzleDoor>().PuzzlePieces.Count)
                 {
