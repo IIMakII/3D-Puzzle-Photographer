@@ -8,6 +8,7 @@ TagManager:
   - Pickup_Cube
   - Pickup_Sphere
   - Pickup_Cyclinder
+  - Pickup_F
   layers:
   - Default
   - TransparentFX
