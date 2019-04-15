@@ -48,7 +48,11 @@ Material:
     - _Dimensions: {r: 1, g: 1, b: 0, a: 0}
     - _RandomFractions: {r: 0.78637993, g: 0.74210846, b: 0, a: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - _Rnd: {r: 0.14202702, g: 0.660213, b: 0, a: 0}
 =======
     - _Rnd: {r: 0.35817426, g: 0.015344501, b: 0, a: 0}
 >>>>>>> parent of dd6763c... fixed buggy pick up. , see summary
+=======
+    - _Rnd: {r: 0.14202702, g: 0.660213, b: 0, a: 0}
+>>>>>>> parent of bda0d2b... testing scene
