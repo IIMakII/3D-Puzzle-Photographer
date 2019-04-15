@@ -50,6 +50,7 @@ Material:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - _Rnd: {r: 0.14202702, g: 0.660213, b: 0, a: 0}
 =======
     - _Rnd: {r: 0.35817426, g: 0.015344501, b: 0, a: 0}
@@ -60,3 +61,6 @@ Material:
 =======
     - _Rnd: {r: 0.35817426, g: 0.015344501, b: 0, a: 0}
 >>>>>>> parent of dd6763c... fixed buggy pick up. , see summary
+=======
+    - _Rnd: {r: 0.083370924, g: 0.13662457, b: 0, a: 0}
+>>>>>>> parent of ae4c803... Merge branch 'master' of https://github.com/IIMakII/3D-Puzzle-Photographer
