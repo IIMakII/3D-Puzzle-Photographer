@@ -11,7 +11,7 @@ public class PlayerScript : MonoBehaviour
     private int currentViewPiece = 0, rounds = 0, CurrentUIMenu = 0;
     [SerializeField] float SphereCastRadius = 0.5f,UITransitionTime = 1.5f;
     [SerializeField] GameObject showPieces;
-    public bool InteractInRange = false, InPuzzleRange = false, PuzzleMode = false;
+    public bool InteractInRange = false, InPuzzleRange = false, PuzzleMode = false ;
     SphereCollider coll;
     public List<Text> UISelections, TempUISelections, UIMainMenu;
     //public List<GameObject> UIMainMenu;
@@ -34,7 +34,6 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
         if (PuzzleMode == false) 
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -62,9 +61,6 @@ public class PlayerScript : MonoBehaviour
 
             }
         }
-=======
-       
->>>>>>> parent of ae4c803... Merge branch 'master' of https://github.com/IIMakII/3D-Puzzle-Photographer
       if ( IFCam.activeInHierarchy == false)
         {
             if (MoveCam == true)
@@ -100,30 +96,6 @@ public class PlayerScript : MonoBehaviour
 
                 }
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    if(Physics.SphereCast(MainCam.transform.position, SphereCastRadius, MainCam.transform.forward, out hit, InteractRange, 9))
-                    {
-                        if (hit.transform.tag == "Pickup_Cube" || hit.transform.tag == "Pickup_Cyclinder" || hit.transform.tag == "Pickup_Sphere")
-                        {
-                            Inventory.Add(hit.transform.gameObject);
-                            hit.transform.GetComponent<Rigidbody>().useGravity = false;
-                            hit.transform.GetComponent<Rigidbody>().freezeRotation = true;
-                            hit.transform.rotation = NeutralRot;
-                            hit.transform.localScale = ViewPieceScale;
-                            hit.transform.gameObject.SetActive(false);
-                        }
-
-                        if (hit.transform.tag == "Puzzle")
-                        {
-                            PuzzleMode = true;
-                            wait = false;
-                        }
-                        Debug.Log("object is " + hit.transform.gameObject.name);
-                    }
-
-
-                }
             }
           
             if (UIMenuActive == true)
