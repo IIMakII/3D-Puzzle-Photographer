@@ -9,6 +9,13 @@ TagManager:
   - Pickup_Sphere
   - Pickup_Cyclinder
   - Pickup_F
+  - Pickup_EmptyRune
+  - Pickup_FRune
+  - Pickup_HRune
+  - Pickup_HouseRune
+  - Pickup_MRune
+  - Pickup_TRune
+  - Pickup_ThornRune
   layers:
   - Default
   - TransparentFX

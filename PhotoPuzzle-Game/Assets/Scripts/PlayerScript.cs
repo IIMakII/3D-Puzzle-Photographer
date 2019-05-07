@@ -42,7 +42,10 @@ public class PlayerScript : MonoBehaviour
             {
                 if (Physics.SphereCast(MainCam.transform.position, SphereCastRadius, MainCam.transform.forward, out hit, InteractRange, layermask))
                 {
-                    if (hit.transform.tag == "Pickup_Cube" || hit.transform.tag == "Pickup_Cyclinder" || hit.transform.tag == "Pickup_Sphere")
+                    if (hit.transform.tag == "Pickup_Cube" || hit.transform.tag == "Pickup_Cyclinder" || hit.transform.tag == "Pickup_Sphere"
+                       || hit.transform.tag == "Pickup_EmptyRune" || hit.transform.tag == "Pickup_FRune" || hit.transform.tag == "Pickup_HRune"
+                       || hit.transform.tag == "Pickup_HouseRune" || hit.transform.tag == "Pickup_MRune" || hit.transform.tag == "Pickup_TRune"
+                       || hit.transform.tag == "Pickup_ThornRune")
                     {
                         Inventory.Add(hit.transform.gameObject);
                         hit.transform.GetComponent<Rigidbody>().useGravity = false;
