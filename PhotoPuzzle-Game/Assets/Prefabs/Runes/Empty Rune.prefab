@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5906245062995373051}
   m_Layer: 0
   m_Name: Empty Rune
-  m_TagString: Pickup_EmptyRune
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
