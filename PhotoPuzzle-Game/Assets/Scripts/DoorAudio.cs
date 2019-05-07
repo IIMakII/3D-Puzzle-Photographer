@@ -14,8 +14,14 @@ public class DoorAudio : MonoBehaviour
         audio.Play(0);
         Debug.Log("Creak");
     }
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if(other.tag.Equals("Player"))
+    //     {
 
-    // Update is called once per frame
+    //     }
+    // }
+    
     void Update()
     {
         
