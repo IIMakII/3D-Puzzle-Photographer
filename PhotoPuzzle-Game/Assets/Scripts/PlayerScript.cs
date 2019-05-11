@@ -107,7 +107,7 @@ public class PlayerScript : MonoBehaviour
             {
                 if (MoveCam == false)
                 {
-                    if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+                    if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.UpArrow))
                     {
                         if(UISelections.Count > 1)
                         {
@@ -118,7 +118,7 @@ public class PlayerScript : MonoBehaviour
                         }
                     }
 
-                    if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.LeftArrow))
+                    if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
                     {
                         if (CurrentUIMenu > 0)
                         {
