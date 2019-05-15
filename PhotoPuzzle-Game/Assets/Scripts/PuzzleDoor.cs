@@ -7,9 +7,11 @@ public class PuzzleDoor : MonoBehaviour
     public List<GameObject> PuzzlePieces;
     public bool Passed = false;
 
+
     private void Awake()
     {
         this.gameObject.tag = "Puzzle";
+
     }
 
     // Update is called once per frame
@@ -17,6 +19,7 @@ public class PuzzleDoor : MonoBehaviour
     {
         if (Passed == true)
         {
+            
             Debug.Log("starting opening");
             StartCoroutine(Opening());
         }
