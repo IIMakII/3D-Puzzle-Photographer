@@ -696,6 +696,7 @@ GameObject:
   - component: {fileID: 1802388656004999646}
   - component: {fileID: 1802388654374284330}
   - component: {fileID: 1802388654374284331}
+  - component: {fileID: 395944550}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Player
@@ -904,7 +905,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1027,6 +1028,21 @@ MonoBehaviour:
   - {fileID: 1802388655224050905}
   Inventory: []
   answer: []
+--- !u!114 &395944550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802388656001101886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bea4a3b56e493f4cad269574de83f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canUseCamera: 1
+  BatteryLife: 50
+  VideoCameraEffect: {fileID: 3814870902889112505}
 --- !u!1 &3814870902889112505
 GameObject:
   m_ObjectHideFlags: 0

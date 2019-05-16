@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22713214, g: 0.2643724, b: 0.2844034, a: 1}
+  m_IndirectSpecularColor: {r: 0.22713178, g: 0.26437217, b: 0.28440326, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1512,27 +1512,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce73a35450ff20d4ab05c1f0c3cec2dc, type: 3}
---- !u!1 &395944541 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1802388656001101886, guid: 69c3b61ed9949cd45952beffe3c460a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 475530941}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &395944550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395944541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bea4a3b56e493f4cad269574de83f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _canUseCamera: 1
-  BatteryLife: 50
-  VideoCameraEffect: {fileID: 1122459844}
 --- !u!1001 &397570277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1958,11 +1937,6 @@ PrefabInstance:
     - target: {fileID: 1802388656001133598, guid: 69c3b61ed9949cd45952beffe3c460a2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1802388656008185310, guid: 69c3b61ed9949cd45952beffe3c460a2,
-        type: 3}
-      propertyPath: m_JumpSpeed
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4740,12 +4714,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91d652779ec7140488b6b8e360497937, type: 3}
---- !u!1 &1122459844 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3814870902889112505, guid: 69c3b61ed9949cd45952beffe3c460a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 475530941}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1126043573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8811c9285b2bf334fb3e80d71c9e001b,
