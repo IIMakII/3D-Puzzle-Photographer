@@ -22646,6 +22646,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: M rune
       objectReference: {fileID: 0}
+    - target: {fileID: 5891958371396230914, guid: aa7fac8a293aab841835b7329e72d594,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5891958371396230915, guid: aa7fac8a293aab841835b7329e72d594,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22701,7 +22706,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3255889905395080086, guid: aa7fac8a293aab841835b7329e72d594, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aa7fac8a293aab841835b7329e72d594, type: 3}
 --- !u!4 &258532113 stripped
 Transform:
@@ -23120,6 +23126,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thorn rune
       objectReference: {fileID: 0}
+    - target: {fileID: 682918115466690308, guid: 6a6717b9d467f31488af86c1e6f1ff7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 986814813628943453, guid: 6a6717b9d467f31488af86c1e6f1ff7f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23175,7 +23186,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1717430846857565033, guid: 6a6717b9d467f31488af86c1e6f1ff7f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6a6717b9d467f31488af86c1e6f1ff7f, type: 3}
 --- !u!4 &278658008 stripped
 Transform:
@@ -30358,7 +30370,7 @@ PrefabInstance:
     - target: {fileID: 3016953546197456037, guid: b830ea59d57ef1548bb907459d9448c9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3016953546197456037, guid: b830ea59d57ef1548bb907459d9448c9,
         type: 3}
@@ -30999,6 +31011,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thorn rune
       objectReference: {fileID: 0}
+    - target: {fileID: 682918115466690308, guid: 6a6717b9d467f31488af86c1e6f1ff7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 986814813628943453, guid: 6a6717b9d467f31488af86c1e6f1ff7f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31054,7 +31071,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1717430846857565033, guid: 6a6717b9d467f31488af86c1e6f1ff7f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6a6717b9d467f31488af86c1e6f1ff7f, type: 3}
 --- !u!4 &472772563 stripped
 Transform:
@@ -33905,7 +33923,7 @@ PrefabInstance:
     - target: {fileID: 8300043649134853877, guid: 53391e38aa3ee004d98051e61fd9df4d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8300043649134853877, guid: 53391e38aa3ee004d98051e61fd9df4d,
         type: 3}
@@ -48939,6 +48957,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: F Rune
       objectReference: {fileID: 0}
+    - target: {fileID: 7627855904098470731, guid: a7fd94b9f00a505408bb27b91f9dc278,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7627855904098470772, guid: a7fd94b9f00a505408bb27b91f9dc278,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48994,7 +49017,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4532370903867385613, guid: a7fd94b9f00a505408bb27b91f9dc278, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a7fd94b9f00a505408bb27b91f9dc278, type: 3}
 --- !u!4 &941098299 stripped
 Transform:
@@ -74520,6 +74544,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: House Rune
       objectReference: {fileID: 0}
+    - target: {fileID: 2217706419060338634, guid: a2e203facb39be04ca838ea1f383c85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6433963062735666301, guid: a2e203facb39be04ca838ea1f383c85b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -74575,7 +74604,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4019950919751985102, guid: a2e203facb39be04ca838ea1f383c85b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2e203facb39be04ca838ea1f383c85b, type: 3}
 --- !u!4 &1065261475 stripped
 Transform:
@@ -84422,6 +84452,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: F Rune
       objectReference: {fileID: 0}
+    - target: {fileID: 7627855904098470731, guid: a7fd94b9f00a505408bb27b91f9dc278,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7627855904098470772, guid: a7fd94b9f00a505408bb27b91f9dc278,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -84477,7 +84512,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4532370903867385613, guid: a7fd94b9f00a505408bb27b91f9dc278, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a7fd94b9f00a505408bb27b91f9dc278, type: 3}
 --- !u!4 &1102710682 stripped
 Transform:
@@ -85750,6 +85786,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: M rune
       objectReference: {fileID: 0}
+    - target: {fileID: 5891958371396230914, guid: aa7fac8a293aab841835b7329e72d594,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5891958371396230915, guid: aa7fac8a293aab841835b7329e72d594,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -85805,7 +85846,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3255889905395080086, guid: aa7fac8a293aab841835b7329e72d594, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aa7fac8a293aab841835b7329e72d594, type: 3}
 --- !u!4 &1189480311 stripped
 Transform:
@@ -107318,7 +107360,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3725613939982554185, guid: b830ea59d57ef1548bb907459d9448c9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b830ea59d57ef1548bb907459d9448c9, type: 3}
 --- !u!1001 &1672982420
 PrefabInstance:
@@ -108321,6 +108364,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: House Rune (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2217706419060338634, guid: a2e203facb39be04ca838ea1f383c85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6433963062735666301, guid: a2e203facb39be04ca838ea1f383c85b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -108376,7 +108424,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4019950919751985102, guid: a2e203facb39be04ca838ea1f383c85b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2e203facb39be04ca838ea1f383c85b, type: 3}
 --- !u!4 &1728746197 stripped
 Transform:
@@ -118843,7 +118892,7 @@ PrefabInstance:
     - target: {fileID: 1802388656001133598, guid: 69c3b61ed9949cd45952beffe3c460a2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1802388656001133598, guid: 69c3b61ed9949cd45952beffe3c460a2,
         type: 3}
@@ -121198,7 +121247,7 @@ PrefabInstance:
     - target: {fileID: 6433963062735666301, guid: a2e203facb39be04ca838ea1f383c85b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6433963062735666301, guid: a2e203facb39be04ca838ea1f383c85b,
         type: 3}
@@ -128639,7 +128688,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4019950919751985102, guid: a2e203facb39be04ca838ea1f383c85b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2e203facb39be04ca838ea1f383c85b, type: 3}
 --- !u!1001 &2066414503
 PrefabInstance:
@@ -129212,6 +129262,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: H Rune
       objectReference: {fileID: 0}
+    - target: {fileID: 234145492490002929, guid: 092fc32f4650f8c4997f8ae79ff64e1c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 234145492490002928, guid: 092fc32f4650f8c4997f8ae79ff64e1c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -129267,7 +129322,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3462566904926045758, guid: 092fc32f4650f8c4997f8ae79ff64e1c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 092fc32f4650f8c4997f8ae79ff64e1c, type: 3}
 --- !u!4 &2099904792 stripped
 Transform:
