@@ -27,5 +27,19 @@ public class UserInput : MonoBehaviour
                 VideoCamera.active = false;
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Application.isEditor)
+            {
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#endif
+            }
+            else
+            {
+                Application.Quit();
+            }
+        }
     }
 }
