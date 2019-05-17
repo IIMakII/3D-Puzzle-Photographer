@@ -17,7 +17,7 @@ public class OpenMainDoorINTRO : MonoBehaviour
       if (other.tag == "Player")
       {
          _hasTriggered = true;
-         SceneManager.LoadScene(sceneName: "_Level_2-Layout");
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
       }
    }
 }
