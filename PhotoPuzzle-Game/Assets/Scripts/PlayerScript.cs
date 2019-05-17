@@ -18,7 +18,7 @@ public class PlayerScript : MonoBehaviour
     public List<GameObject> Inventory, answer;
     private GameObject IFCam, MainCam, UICanvas;
     RaycastHit hit;
-    Vector3 ViewPieceScale = new Vector3(0.1f, 0.1f, 0.1f);
+    Vector3 ViewPieceScale = new Vector3(0.4f, 0.4f, 0.4f);
     Quaternion NeutralRot = new Quaternion(0, 0, 0,0);
     int layermask;
     
