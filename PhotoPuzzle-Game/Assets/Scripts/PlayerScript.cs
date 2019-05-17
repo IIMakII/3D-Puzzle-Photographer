@@ -57,8 +57,11 @@ public class PlayerScript : MonoBehaviour
 
                     if (hit.transform.tag == "Puzzle")
                     {
-                        PuzzleMode = true;
-                        wait = false;
+                        if(hit.transform.GetComponent<PuzzleDoor>().Passed == false)
+                        {
+                            PuzzleMode = true;
+                            wait = false;
+                        }
                     }
                     Debug.Log("object is " + hit.transform.gameObject.name);
                 }
