@@ -47,4 +47,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Dimensions: {r: 1, g: 1, b: 0, a: 0}
     - _RandomFractions: {r: 0.78637993, g: 0.74210846, b: 0, a: 0}
+<<<<<<< HEAD
     - _Rnd: {r: 0.9204601, g: 0.31107265, b: 0, a: 0}
+=======
+    - _Rnd: {r: 0.6326419, g: 0.75375366, b: 0, a: 0}
+>>>>>>> parent of a4ba5bd... Revert "lvl 2 xomplete"
