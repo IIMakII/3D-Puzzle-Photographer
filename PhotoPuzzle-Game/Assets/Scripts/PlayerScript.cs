@@ -89,7 +89,7 @@ public class PlayerScript : MonoBehaviour
             if (PuzzleMode == false)
             {
 
-                if(Input.GetKeyDown(KeyCode.Tab))
+               /* if(Input.GetKeyDown(KeyCode.Tab))
                 {
                     if (MoveCam == false)
                     {
@@ -99,7 +99,7 @@ public class PlayerScript : MonoBehaviour
                         StartCoroutine(SwitchingUIToggle());
                     }
 
-                }
+                } */
 
             }
           
