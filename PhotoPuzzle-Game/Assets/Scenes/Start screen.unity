@@ -1595,7 +1595,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 87}
+  m_AnchoredPosition: {x: 1, y: 126.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &598026960
@@ -2482,7 +2482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &845276735
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2802,7 +2802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &954100652
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3147,7 +3147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -95}
+  m_AnchoredPosition: {x: 1, y: -128.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1127870453
@@ -3288,8 +3288,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: -11}
-  m_SizeDelta: {x: 170.8, y: 140.7}
+  m_AnchoredPosition: {x: 9, y: 6.83}
+  m_SizeDelta: {x: 170.8, y: 197.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135207271
 MonoBehaviour:
@@ -3333,7 +3333,10 @@ MonoBehaviour:
     E - Object interact
 
 
-    While interacting with Doors, A and D switch between available keys'
+    While interacting with Doors, A and D switch between available keys
+
+
+    Q - End door interaction'
 --- !u!222 &1135207272
 CanvasRenderer:
   m_ObjectHideFlags: 0

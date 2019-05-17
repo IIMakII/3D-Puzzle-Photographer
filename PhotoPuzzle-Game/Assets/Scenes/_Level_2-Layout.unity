@@ -22666,6 +22666,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: M rune
       objectReference: {fileID: 0}
+    - target: {fileID: 5891958371396230914, guid: aa7fac8a293aab841835b7329e72d594,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5891958371396230915, guid: aa7fac8a293aab841835b7329e72d594,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23139,6 +23144,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Thorn rune
+      objectReference: {fileID: 0}
+    - target: {fileID: 682918115466690308, guid: 6a6717b9d467f31488af86c1e6f1ff7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 986814813628943453, guid: 6a6717b9d467f31488af86c1e6f1ff7f,
         type: 3}
@@ -31137,6 +31147,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Thorn rune
+      objectReference: {fileID: 0}
+    - target: {fileID: 682918115466690308, guid: 6a6717b9d467f31488af86c1e6f1ff7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 986814813628943453, guid: 6a6717b9d467f31488af86c1e6f1ff7f,
         type: 3}
@@ -45876,7 +45891,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716885461}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a789a69ab7b7d04d963af021db334b8, type: 3}
   m_Name: 
@@ -49240,6 +49255,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: F Rune
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627855904098470731, guid: a7fd94b9f00a505408bb27b91f9dc278,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7627855904098470772, guid: a7fd94b9f00a505408bb27b91f9dc278,
         type: 3}
@@ -74941,6 +74961,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: House Rune
       objectReference: {fileID: 0}
+    - target: {fileID: 2217706419060338634, guid: a2e203facb39be04ca838ea1f383c85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6433963062735666301, guid: a2e203facb39be04ca838ea1f383c85b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -84843,6 +84868,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: F Rune
       objectReference: {fileID: 0}
+    - target: {fileID: 7627855904098470731, guid: a7fd94b9f00a505408bb27b91f9dc278,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7627855904098470772, guid: a7fd94b9f00a505408bb27b91f9dc278,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -86230,6 +86260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: M rune
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891958371396230914, guid: aa7fac8a293aab841835b7329e72d594,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5891958371396230915, guid: aa7fac8a293aab841835b7329e72d594,
         type: 3}
@@ -109070,6 +109105,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: House Rune (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2217706419060338634, guid: a2e203facb39be04ca838ea1f383c85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6433963062735666301, guid: a2e203facb39be04ca838ea1f383c85b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -130088,6 +130128,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: H Rune
+      objectReference: {fileID: 0}
+    - target: {fileID: 234145492490002929, guid: 092fc32f4650f8c4997f8ae79ff64e1c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 234145492490002928, guid: 092fc32f4650f8c4997f8ae79ff64e1c,
         type: 3}
