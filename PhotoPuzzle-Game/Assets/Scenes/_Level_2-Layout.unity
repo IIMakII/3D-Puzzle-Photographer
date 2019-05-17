@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -49489,7 +49489,7 @@ GameObject:
   - component: {fileID: 943464393}
   - component: {fileID: 943464392}
   - component: {fileID: 943464391}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131545,7 +131545,7 @@ GameObject:
   - component: {fileID: 2132021112}
   - component: {fileID: 2132021114}
   - component: {fileID: 2132021113}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Interact-Tet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
