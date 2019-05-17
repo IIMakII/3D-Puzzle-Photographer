@@ -13,7 +13,14 @@ public float destroyTimer;
     {
         PopupText.GetComponent<Text>().enabled = false;
     }
-
+ void Update()
+ {
+     
+            if(Input.GetKeyDown(KeyCode.E) && PopupText.isActiveAndEnabled)
+            {
+                PopupText.GetComponent<Text>().enabled = false;
+            }
+ }
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")

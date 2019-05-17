@@ -45014,7 +45014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopupText: {fileID: 2132021113}
-  destroyTimer: 10
+  destroyTimer: 3
 --- !u!65 &681368792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65038,7 +65038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopupText: {fileID: 2132021113}
-  destroyTimer: 10
+  destroyTimer: 3
 --- !u!65 &1034135960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -86811,7 +86811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopupText: {fileID: 2132021113}
-  destroyTimer: 10
+  destroyTimer: 3
 --- !u!65 &1200346737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -108633,7 +108633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopupText: {fileID: 2132021113}
-  destroyTimer: 10
+  destroyTimer: 3
 --- !u!65 &1689835185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -120599,7 +120599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopupText: {fileID: 2132021113}
-  destroyTimer: 10
+  destroyTimer: 3
 --- !u!65 &1801263310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -121344,7 +121344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopupText: {fileID: 2132021113}
-  destroyTimer: 10
+  destroyTimer: 3
 --- !u!65 &1831011982
 BoxCollider:
   m_ObjectHideFlags: 0
